@@ -11,14 +11,14 @@ type NessusData struct {
 }
 
 type Report struct {
-	Name       string       `xml:"name,attr"`
-	ReportHost []ReportHost `xml:"ReportHost"`
+	Name        string       `xml:"name,attr"`
+	ReportHosts []ReportHost `xml:"ReportHost"`
 }
 
 type ReportHost struct {
 	Name           string         `xml:"name,attr"`
 	HostProperties HostProperties `xml:"HostProperties"`
-	ReportItem     []ReportItem   `xml:"ReportItem"`
+	ReportItems    []ReportItem   `xml:"ReportItem"`
 }
 
 type HostProperties struct {
@@ -52,7 +52,7 @@ type ReportItem struct {
 	XREF                       []string `xml:"xref,name"`
 	PluginModificationDate     string   `xml:"plugin_modification_date,name"`
 	PluginPublicationDate      string   `xml:"plugin_publication_date,name"`
-	VulnPublicationDate        string   `xml:"vuln_publification_date,name"`
+	VulnPublicationDate        string   `xml:"vuln_publication_date,name"`
 	ExploitabilityEase         string   `xml:"exploitability_ease,name"`
 	ExploitAvailable           string   `xml:"exploit_available,name"`
 	ExploitFrameworkCanvas     string   `xml:"exploit_framework_canvas,name"`
