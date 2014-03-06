@@ -1,5 +1,4 @@
-/* Parses Nessus XML data into a similary formed struct */
-
+/*Package gonessus parses Nessus XML data into a similary formed struct.*/
 package gonessus
 
 import (
