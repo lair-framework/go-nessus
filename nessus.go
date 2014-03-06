@@ -6,36 +6,43 @@ import (
 	"encoding/xml"
 )
 
+// NessusData contains a nessus report.
 type NessusData struct {
 	Report Report `xml:"Report"`
 }
 
+// Report has a name and contains all the host details.
 type Report struct {
 	Name        string       `xml:"name,attr"`
 	ReportHosts []ReportHost `xml:"ReportHost"`
 }
 
+// ReportHost containts the hostname or ip address for the host and
+// all vulnerability and service information.
 type ReportHost struct {
 	Name           string         `xml:"name,attr"`
 	HostProperties HostProperties `xml:"HostProperties"`
 	ReportItems    []ReportItem   `xml:"ReportItem"`
 }
 
+// HostProperties are tags filled with likely useless information.
 type HostProperties struct {
 	Tags []Tag `xml:"tag"`
 }
 
+// Tag is used to split the tag into name and the tag content.
 type Tag struct {
 	Name string `xml:"name,attr"`
 	Data string `xml:",chardata"`
 }
 
+// ReportItem is vulnerability plugin output.
 type ReportItem struct {
 	Port                       string   `xml:"port,attr"`
 	SvcName                    string   `xml:"svc_name,attr"`
 	Protocol                   string   `xml:"protocol,attr"`
 	Severity                   string   `xml:"severity,attr"`
-	PluginId                   string   `xml:"pluginID,attr"`
+	PluginID                   string   `xml:"pluginID,attr"`
 	PluginName                 string   `xml:"pluginName,attr"`
 	PluginFamily               string   `xml:"pluginFamily,attr"`
 	PluginType                 string   `xml:"plugin_type,name"`
@@ -65,7 +72,7 @@ type ReportItem struct {
 	CVSSTemporalScore          string   `xml:"cvss_temporal_score,name"`
 	ComplianceResult           string   `xml:"cm:compliance-result,name"`
 	ComplianceActualValue      string   `xml:"cm:compliance-actual-value,name"`
-	ComplianceCheckId          string   `xml:"cm:compliance-check-id,name"`
+	ComplianceCheckID          string   `xml:"cm:compliance-check-id,name"`
 	ComplianceAuditFile        string   `xml:"cm:compliance-audit-file,name"`
 	ComplianceCheckValue       string   `xml:"cm:compliance-check-name,name"`
 }
