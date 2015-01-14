@@ -1,5 +1,5 @@
 /*Package gonessus parses Nessus XML data into a similary formed struct.*/
-package gonessus
+package go-nessus
 
 import (
 	"encoding/xml"
