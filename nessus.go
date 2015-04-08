@@ -37,10 +37,10 @@ type Tag struct {
 
 // ReportItem is vulnerability plugin output.
 type ReportItem struct {
-	Port                       string   `xml:"port,attr"`
+	Port                       int      `xml:"port,attr"`
 	SvcName                    string   `xml:"svc_name,attr"`
 	Protocol                   string   `xml:"protocol,attr"`
-	Severity                   string   `xml:"severity,attr"`
+	Severity                   int      `xml:"severity,attr"`
 	PluginID                   string   `xml:"pluginID,attr"`
 	PluginName                 string   `xml:"pluginName,attr"`
 	PluginFamily               string   `xml:"pluginFamily,attr"`
@@ -49,7 +49,7 @@ type ReportItem struct {
 	Fname                      string   `xml:"fname,name"`
 	RiskFactor                 string   `xml:"risk_factor,name"`
 	Synopsis                   string   `xml:"synopsis,name"`
-	Descripion                 string   `xml:"description,name"`
+	Description                string   `xml:"description,name"`
 	Solution                   string   `xml:"solution,name"`
 	PluginOutput               string   `xml:"plugin_output,name"`
 	SeeAlso                    string   `xml:"see_also,name"`
@@ -60,14 +60,15 @@ type ReportItem struct {
 	PluginPublicationDate      string   `xml:"plugin_publication_date,name"`
 	VulnPublicationDate        string   `xml:"vuln_publication_date,name"`
 	ExploitabilityEase         string   `xml:"exploitability_ease,name"`
-	ExploitAvailable           string   `xml:"exploit_available,name"`
-	ExploitFrameworkCanvas     string   `xml:"exploit_framework_canvas,name"`
-	ExploitFrameworkMetasploit string   `xml:"exploit_framework_metasploit,name"`
-	ExploitFrameworkCore       string   `xml:"exploit_framework_core,name"`
+	ExploitAvailable           bool     `xml:"exploit_available,name"`
+	ExploitFrameworkCanvas     bool     `xml:"exploit_framework_canvas,name"`
+	ExploitFrameworkMetasploit bool     `xml:"exploit_framework_metasploit,name"`
+	ExploitFrameworkCore       bool     `xml:"exploit_framework_core,name"`
 	MetasploitName             string   `xml:"metasploit_name,name"`
 	CanvasPackage              string   `xml:"canvas_package,name"`
+	CoreName                   string   `xml:"core_name,name"`
 	CVSSVector                 string   `xml:"cvss_vector,name"`
-	CVSSBaseScore              string   `xml:"cvss_base_score,name"`
+	CVSSBaseScore              float64  `xml:"cvss_base_score,name"`
 	CVSSTemporalScore          string   `xml:"cvss_temporal_score,name"`
 	ComplianceResult           string   `xml:"cm:compliance-result,name"`
 	ComplianceActualValue      string   `xml:"cm:compliance-actual-value,name"`
