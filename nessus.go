@@ -68,7 +68,7 @@ type ReportItem struct {
 	CanvasPackage              string   `xml:"canvas_package,name"`
 	CoreName                   string   `xml:"core_name,name"`
 	CVSSVector                 string   `xml:"cvss_vector,name"`
-	CVSSBaseScore              float64  `xml:"cvss_base_score,name"`
+	CVSSBaseScore              float64  `xml:"cvss3_base_score,name"`
 	CVSSTemporalScore          string   `xml:"cvss_temporal_score,name"`
 	ComplianceResult           string   `xml:"cm:compliance-result,name"`
 	ComplianceActualValue      string   `xml:"cm:compliance-actual-value,name"`
