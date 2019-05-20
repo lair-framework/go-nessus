@@ -70,11 +70,17 @@ type ReportItem struct {
 	CVSSVector                 string   `xml:"cvss_vector,name"`
 	CVSSBaseScore              float64  `xml:"cvss_base_score,name"`
 	CVSSTemporalScore          string   `xml:"cvss_temporal_score,name"`
-	ComplianceResult           string   `xml:"cm:compliance-result,name"`
-	ComplianceActualValue      string   `xml:"cm:compliance-actual-value,name"`
-	ComplianceCheckID          string   `xml:"cm:compliance-check-id,name"`
-	ComplianceAuditFile        string   `xml:"cm:compliance-audit-file,name"`
-	ComplianceCheckValue       string   `xml:"cm:compliance-check-name,name"`
+	Compliance                 bool     `xml:"compliance,name"`
+	ComplianceCheckName        string   `xml:"compliance-check-name,name"`
+	ComplianceAuditFile        string   `xml:"compliance-audit-file,name"`
+	ComplianceCheckID          string   `xml:"compliance-check-id,name"`
+	ComplianceActualValue      string   `xml:"compliance-actual-value,name"`
+	CompliancePolicyValue      string   `xml:"compliance-policy-value,name"`
+	ComplianceResult           string   `xml:"compliance-result,name"`
+	ComplianceInfo             string   `xml:"compliance-info,name"`
+	ComplianceSolution         string   `xml:"compliance-solution,name"`
+	ComplianceDBType           string   `xml:"compliance-db-type,name"`
+	ComplianceSeeAlso          string   `xml:"compliance-see-also,name"`
 }
 
 // Parse takes a byte array of nessus xml data and unmarshals it into an
